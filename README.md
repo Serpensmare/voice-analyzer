@@ -1,6 +1,6 @@
 # 🎙️ Voice Analyzer
 
-**Fully local** voice memo transcription + AI-powered analysis pipeline. Zero API costs. Runs on a Raspberry Pi, Mac Mini, or any machine with Python.
+**Fully local** audio transcription + AI-powered analysis. Analyze any voice recording — meeting recordings, voice memos, interviews, podcasts, phone calls, lectures. Not just Telegram voice notes. Zero API costs. Runs on a Raspberry Pi, Mac Mini, or any machine with Python.
 
 > **Use case:** You just had an important 45-minute meeting. Complex topics, fast decisions, action items flying around. Instead of taking notes — just record it. Drop the audio into Voice Analyzer and get back a full executive summary, key takeaways, KPIs, action items, and a timestamped transcript. All processed locally on your hardware. No data leaves your machine.
 
@@ -14,7 +14,7 @@
 ## What it does
 
 ```
-Voice Note → faster-whisper (local STT) → Ollama llama3.2 (local AI) → Rich Analysis Report
+Any Audio File → faster-whisper (local STT) → Ollama llama3.2 (local AI) → Rich Analysis Report
 ```
 
 **Pipeline:**
@@ -164,8 +164,8 @@ the upcoming product launch timeline, and hiring priorities...
 
 ```
 ┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│  Telegram    │────▶│ faster-whisper│────▶│  Ollama     │
-│  Voice Note  │     │  (local STT) │     │  llama3.2   │
+│  Any Audio   │────▶│ faster-whisper│────▶│  Ollama     │
+│  File        │     │  (local STT) │     │  llama3.2   │
 └─────────────┘     └──────────────┘     └──────┬──────┘
                                                  │
                     ┌──────────────┐     ┌───────▼──────┐
