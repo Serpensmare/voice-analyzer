@@ -29,7 +29,6 @@ Voice Note → faster-whisper (local STT) → Ollama llama3.2 (local AI) → Ric
    - Follow-up questions
 3. 📄 **Report** — Beautiful `.analysis.md` markdown report
 4. 📱 **Telegram Bot** — Send voice notes, get analysis back instantly
-5. 📋 **EspoCRM** — Optionally auto-save to your CRM as meeting records
 
 **💰 Total cost: $0** — everything runs locally on your hardware.
 
@@ -94,11 +93,6 @@ voice-analyzer analyze meeting.m4a --language es
 # Skip AI enrichment (transcription only)
 voice-analyzer analyze audio.ogg --no-enrich
 
-# Push to EspoCRM
-export ESPO_BASE="http://localhost:8080/api/v1"
-export ESPO_USER="admin"
-export ESPO_PASS="your-password"
-voice-analyzer analyze audio.ogg --push-crm
 ```
 
 ## OpenClaw Integration
@@ -161,16 +155,9 @@ the upcoming product launch timeline, and hiring priorities...
 [00:15] First, let's look at Q1 numbers...
 ```
 
-## EspoCRM Integration (Optional)
 
-Auto-save every analysis to your CRM:
 
 ```bash
-export ENABLE_CRM="true"
-export ESPO_BASE="http://localhost:8080/api/v1"
-export ESPO_USER="admin"
-export ESPO_PASS="your-password"
-export CRM_ENTITY="Meeting"  # or "Note"
 ```
 
 ## Architecture
@@ -182,7 +169,6 @@ export CRM_ENTITY="Meeting"  # or "Note"
 └─────────────┘     └──────────────┘     └──────┬──────┘
                                                  │
                     ┌──────────────┐     ┌───────▼──────┐
-                    │  EspoCRM     │◀────│  .analysis.md│
                     │  (optional)  │     │  report      │
                     └──────────────┘     └──────────────┘
 ```
